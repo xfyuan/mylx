@@ -1,4 +1,4 @@
-FROM node:4.2
+FROM node:0.12
 
 # ===================================
 # install ember-cli, bower, phantomjs
@@ -13,7 +13,7 @@ RUN npm install -g phantomjs@1.9.18
 RUN \
 	git clone https://github.com/facebook/watchman.git &&\
 	cd watchman &&\
-	git checkout v3.9.0 &&\
+	git checkout v4.1.0 &&\
 	./autogen.sh &&\
 	./configure &&\
 	make &&\
