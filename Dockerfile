@@ -3,9 +3,9 @@ FROM node:0.12
 # ===================================
 # install ember-cli, bower, phantomjs
 # ===================================
-RUN npm install -g ember-cli@1.13.8
-RUN npm install -g bower@1.6.5
-RUN npm install -g phantomjs@1.9.18
+RUN npm install -g bower
+RUN npm install -g ember-cli
+RUN npm install -g phantomjs
 
 # ================
 # install watchman
@@ -17,7 +17,7 @@ RUN \
 	./autogen.sh &&\
 	./configure &&\
 	make &&\
-	make install
+	sudo make install
 
 
 # =================
@@ -27,5 +27,4 @@ ENV APP_HOME /myapp
 RUN mkdir -p $APP_HOME
 WORKDIR $APP_HOME
 
-# run ember server on container start
 ENTRYPOINT ["/usr/local/bin"]
