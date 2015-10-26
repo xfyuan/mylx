@@ -20,11 +20,4 @@ RUN \
 	make install
 
 
-# =================
-# set app directory
-# =================
-ENV APP_HOME /myapp
-RUN mkdir -p $APP_HOME
-WORKDIR $APP_HOME
-
 ENTRYPOINT ["/usr/local/bin"]
